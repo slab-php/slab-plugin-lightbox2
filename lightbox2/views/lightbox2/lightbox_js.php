@@ -162,9 +162,22 @@ lightbox = new Lightbox options
       $lightbox.find('.lb-outerContainer').addClass('animating');
       preloader = new Image;
       preloader.onload = function() {
+        var innerHeight, innerWidth;
         $image.attr('src', _this.album[imageNumber].link);
+        innerWidth = window.innerWidth || document.documentElement.clientWidth;
+        innerHeight = window.innerHeight || document.documentElement.clientHeight;
+        if (preloader.width > innerWidth) {
+          preloader.height = (innerWidth * 0.9 * preloader.height) / preloader.width;
+          preloader.width = innerWidth * 0.9;
+        }
+        if (preloader.height > innerHeight * 0.8) {
+          preloader.width = (innerHeight * 0.8 * preloader.width) / preloader.height;
+          preloader.height = innerHeight * 0.8;
+        }
+
         $image.width = preloader.width;
         $image.height = preloader.height;
+        $image.attr("width", "" + preloader.width + "px");
         return _this.sizeContainer(preloader.width, preloader.height);
       };
       preloader.src = this.album[imageNumber].link;
