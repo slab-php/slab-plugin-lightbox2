@@ -1,10 +1,9 @@
 slab-plugin-lightbox2
 =====================
 
-A [Slab](https://github.com/swxben/slab) plugin based on a version of Lightbox2 modified to work:
+A [Slab](https://github.com/swxben/slab) plugin based on a version of [Lightbox2](http://lokeshdhakar.com/projects/lightbox2/). Additionally the following changes have been pulled in:
 
-- as a Slab plugin, and
-- with jQuery 1.9.1
+- jQuery 1.9.1 support - <https://github.com/lokesh/lightbox2/pull/35>
 
 
 ## Usage
